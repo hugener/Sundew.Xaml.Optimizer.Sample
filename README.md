@@ -12,5 +12,5 @@
 * Enable/disable individual optimizers (IsEnabled for each optimizer).
 * Can be placed in a parent folder of the project file in order to support reuse (Currently, max. 4 levels above, let me know if you need more).
 * Library paths can be absolute or relative to the packages folder in the solution directory.  
-* Library paths can use ?LATEST_VERSION? instead of specifying a specific version number to avoid breaking the build when optimizer packages are updated. See sample: https://github.com/hugener/Sundew.Xaml.Optimizer.Sample/blob/master/Sources/Sundew.Xaml.Optimizer.Sample.Wpf/sxo-settings.json
+* Library paths can use ?LATEST_VERSION? instead of using a specific version number to avoid breaking the build when optimizer packages are updated. Non-Prerelease packages are considered newer than prerelease packages if the version numbers are the same. See sample: https://github.com/hugener/Sundew.Xaml.Optimizer.Sample/blob/master/Sources/Sundew.Xaml.Optimizer.Sample.Wpf/sxo-settings.json
 * Can contain optimizer specific settings in json.
