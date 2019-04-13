@@ -3,4 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="AccentBrush" Color="#555555" />
     <SolidColorBrush x:Key="BackgroundBrush" Color="#EEEEEE" />
+    <Color x:Key="GradientStart">#FFACACAC</Color>
+    <Color x:Key="GradientStop">White</Color>
 </ResourceDictionary>

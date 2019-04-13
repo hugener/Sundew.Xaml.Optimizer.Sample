@@ -6,11 +6,22 @@
     x:Class="Sundew.Xaml.Sample.MainWindow"
     mc:Ignorable="d"
     Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Storyboard x:Key="SampleAnimation" AutoReverse="True" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="border">
+                <LinearColorKeyFrame KeyTime="0:0:2" Value="{DynamicResource GradientStop}"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="border">
+                <LinearColorKeyFrame KeyTime="0:0:2" Value="{DynamicResource GradientStart}"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock FontSize="48" Text="Sundew.Xaml.Optimizer sample"/>
@@ -36,6 +47,27 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ComboBox Grid.Row="3" SelectedItem="{Binding ThemeManager.CurrentTheme}" ItemsSource="{Binding ThemeManager.ThemeInfos}" />
+        <Border x:Name="border" Grid.Row="3" Height="50">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop x:Name="Start" Color="{DynamicResource GradientStart}" Offset="0"/>
+                    <GradientStop x:Name="Stop" Color="{DynamicResource GradientStop}" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource SampleAnimation}"/>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+        <ComboBox Grid.Row="4" SelectedItem="{Binding ThemeManager.CurrentTheme, NotifyOnTargetUpdated=True}" ItemsSource="{Binding ThemeManager.ThemeInfos}" />
     </Grid>
 </Window>

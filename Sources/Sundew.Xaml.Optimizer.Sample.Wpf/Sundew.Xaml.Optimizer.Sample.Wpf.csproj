@@ -44,11 +44,8 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sundew.Xaml.Optimization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sundew.Xaml.Optimization.1.0.0\lib\netstandard2.0\Sundew.Xaml.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="Sundew.Xaml.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sundew.Xaml.Optimizations.1.0.0\lib\net40\Sundew.Xaml.Wpf.dll</HintPath>
+    <Reference Include="Sundew.Xaml.Wpf, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sundew.Xaml.Optimizations.2.0.1\lib\net461\Sundew.Xaml.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -150,7 +147,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -159,7 +158,9 @@
     <None Include="sxo-settings.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.Unstable.1.1.1.114\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
@@ -173,9 +174,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NETCore.UniversalWindowsPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NETCore.UniversalWindowsPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NetCore.UniversalWindowsPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NetCore.UniversalWindowsPlatform.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\packages\Sundew.Xaml.Optimizer.1.0.0\build\Sundew.Xaml.Optimizer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sundew.Xaml.Optimizer.1.0.0\build\Sundew.Xaml.Optimizer.targets'))" />
+    <Error Condition="!Exists('..\packages\Sundew.Xaml.Optimizer.2.1.0\build\Sundew.Xaml.Optimizer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sundew.Xaml.Optimizer.2.1.0\build\Sundew.Xaml.Optimizer.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NetCore.UniversalWindowsPlatform.targets" Condition="Exists('..\packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.8\build\Microsoft.NetCore.UniversalWindowsPlatform.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\packages\Sundew.Xaml.Optimizer.1.0.0\build\Sundew.Xaml.Optimizer.targets" Condition="Exists('..\packages\Sundew.Xaml.Optimizer.1.0.0\build\Sundew.Xaml.Optimizer.targets')" />
+  <Import Project="..\packages\Sundew.Xaml.Optimizer.2.1.0\build\Sundew.Xaml.Optimizer.targets" Condition="Exists('..\packages\Sundew.Xaml.Optimizer.2.1.0\build\Sundew.Xaml.Optimizer.targets')" />
 </Project>
